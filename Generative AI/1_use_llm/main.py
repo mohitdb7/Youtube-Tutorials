@@ -1,6 +1,9 @@
 from groq import Groq
 from dotenv import load_dotenv
 import os
+from rich.console import Console
+from rich.markdown import Markdown
+from rich.json import JSON
 
 load_dotenv()
 
@@ -13,8 +16,7 @@ chat_result = groq_client.chat.completions.create(
     messages=[
         {
             "role":"system",
-            "content":("My name is Mohit, always address me with my name where you are responding to any of my queries." 
-                       "Explain me briefly. Do not add too much of details")
+            "content":("My name is Mohit, always address me with my name where you are responding to any of my queries.")
         },
         {
             "role": "user",
@@ -23,4 +25,11 @@ chat_result = groq_client.chat.completions.create(
     ]
 )
 
-print(chat_result.choices[0].message.content)
+def print_llm_response(response: str):
+    console = Console()
+    try:
+        console.print(JSON(response))
+    except Exception:
+        console.print(Markdown(response))
+
+print_llm_response(chat_result.choices[0].message.content)
