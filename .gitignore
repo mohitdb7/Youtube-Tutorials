@@ -1,3 +1,6 @@
+.ipynb_checkpoints
+.DS_Store
+
 # Ignore all __pycache__ directories recursively
 **/__pycache__/
 
@@ -38,3 +41,29 @@ uv.lock
 
 *.pem
 **/*.pem
+
+**/.ipynb_checkpoints/
+.ipynb_checkpoints/
+
+**/*.png
+**/*.jpg
+**/*.zip
+**/*.txt
+**/*.json
+**/*.gz
+**/*.csv
+**/*.wav
+**/*.xml
+**/test.*
+**/train.*
+**/dev.*
+**/monolingual.*
+**/*.pt
+**/ckpt-*
+**/*.sqlite3
+**/*.index
+**/*.bin
+Environment.yml
+**/.DS_Store
+.DS_Store
+.DS_Store
