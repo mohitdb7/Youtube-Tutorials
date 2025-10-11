@@ -1,6 +1,6 @@
 # Docker commands
 
-### Docker compose
+### Docker containers
 To build and mount the custom images for backend and frontend
 ```
 docker-compose up
@@ -17,15 +17,19 @@ docker-compose up
 ```
 
 To stop all the container
-```
-Stop containers remove volumes/images:
-docker-compose down -v
-
-or
-
 Stop containers (but keep volumes/images):
+```
 docker-compose down
 ```
+
+Stop containers remove volumes/images:
+```
+docker-compose down --rmi all --volumes
+```
+
+`--rmi all`: Remove all images used by any service.
+
+`--volumes`: Remove named volumes declared in the volumes section of docker-compose.yml
 
 To view all running containers
 ```
@@ -37,6 +41,9 @@ To stop a running container
 docker stop <container_name_or_id>
 ```
 __________
+
+
+### Docker images
 
 When using the build in docker-compose then it will create the images by itself
 
@@ -66,4 +73,29 @@ docker rmi <image-id> <image-id>
 Remove all docker images
 ```
 docker rmi $(docker images -q)
+```
+
+_______
+
+
+### Redis
+
+Install Redis
+```
+brew redis
+```
+
+start redis
+```
+brew services start redis
+```
+
+Check if redis is running
+```
+redis-cli ping
+```
+
+stop redis
+```
+brew services stop redis
 ```
