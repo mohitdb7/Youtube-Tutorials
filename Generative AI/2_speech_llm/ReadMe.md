@@ -44,7 +44,7 @@ This project is a simple voice-interaction system built in Python that allows us
 Install dependencies using `pip`:
 
 ```bash
-pip install webrtcvad pyaudio openai-whisper pyttsx3 python-dotenv groq rich numpy
+pip install webrtcvad pyaudio openai-whisper pyttsx3 python-dotenv groq rich numpy ffmpeg
 ```
 
 ```
