@@ -3,7 +3,7 @@
 ### Docker containers
 To build and mount the custom images for backend and frontend
 ```
-docker-compose up
+docker-compose build
 ```
 
 To rebuild and start the container cleanly
